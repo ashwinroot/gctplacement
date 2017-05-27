@@ -64,7 +64,7 @@ class UserController extends Controller
       $notification = array(
         'alert' => 'Successfully updated your profile.'
       );
-      return redirect('home')->with($notification);
+      return redirect('home')->with('message','Successfully updated your profile.');
 
     }
 }

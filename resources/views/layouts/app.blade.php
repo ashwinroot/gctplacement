@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{asset ('css/admin.css')}}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -52,6 +53,11 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
+                                  @if(Auth::user()->isPR())
+                                    <li>
+                                      <a href="/admin " >Admin DashBoard</a>
+                                    </li>
+                                  @endif
                                     <li>
                                       <a href="/show/{{ Auth::user()->id }} " >Edit Profile</a>
                                     </li>

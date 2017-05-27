@@ -23,7 +23,8 @@ Route::get('/show/{id}','UserController@show');
 Route::post('/show/update/{id}','UserController@update');
 
 // Admin Page
-// Route::get('/admin','AdminController@login')->name('admin');
+Route::get('/admin','AdminController@dashboard')->name('admin');
+Route::get('/dashboard','AdminController@dashboard2');
 // Route::post('/admin/login','AdminController@check');
 // Route::get('/admin/register','AdminController@register');
 // Route::('/admin/new','AdminController@new');

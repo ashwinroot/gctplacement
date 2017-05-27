@@ -6,15 +6,21 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Dashboard</div>
-                <div class="alert-info">
-                    {{-- {{if($alert) $alert}} --}}
+                  @if ($message)
+                    <div class="alert alert-success alert-dismissable">
+                      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                      <strong>Success!</strong> {{$message}}
+                    </div>
+                  @endif
 
-                <div class="panel-body">
-                    You are logged in!
+
                     @if (Auth::user()->isPR())
-                      You are a PR.
+                      <div class="alert alert-info alert-dismissable">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>Success!</strong> You have logged in as a PR of <strong>{{Auth::user()->dept}}</strong>.
+                      </div>
                     @endif
-                </div>
+
                 </div>
             </div>
         </div>
