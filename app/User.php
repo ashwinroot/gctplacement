@@ -9,6 +9,21 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    public function roles()
+    {
+        return $this->belongsToMany(Roles::class,'users_roles');
+
+    }
+    public function isPR()
+    {
+      $roles = $this->roles->toArray();
+      return !empty($roles);
+    }
+    public function hasRole($check)
+    {
+        return in_array($check,array_fetch($this->roles->toArray(),'name'));
+    }
+
     /**
      * The attributes that are mass assignable.
      *

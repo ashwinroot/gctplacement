@@ -8,9 +8,13 @@
                 <div class="panel-heading">Dashboard</div>
                 <div class="alert-info">
                     {{-- {{if($alert) $alert}} --}}
-                </div>
+
                 <div class="panel-body">
                     You are logged in!
+                    @if (Auth::user()->isPR())
+                      You are a PR.
+                    @endif
+                </div>
                 </div>
             </div>
         </div>
